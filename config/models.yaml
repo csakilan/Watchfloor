@@ -1,0 +1,4 @@
+triage:      { provider: google, model: gemini-2.5-flash }
+supervisor:  { provider: google, model: gemini-2.5-flash }
+specialists: { provider: google, model: gemini-2.5-flash-lite }
+synthesizer: { provider: google, model: gemini-2.5-flash }
