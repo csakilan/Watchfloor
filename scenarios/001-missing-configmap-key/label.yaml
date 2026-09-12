@@ -1,0 +1,14 @@
+id: "001"
+incident: "the checkout service is returning 503s"
+root_cause_category: missing_configmap_key
+root_cause_detail: >-
+  Deployment checkout in namespace shop reads DB_HOST via configMapKeyRef from
+  configmap app-config, which no longer contains that key. The container cannot
+  be created, so the Service has no ready endpoints.
+namespace: shop
+difficulty: easy
+minimum_evidence:
+  - config
+red_herrings:
+  - "inventory-cache in the same namespace restarts every 15 seconds for an unrelated and benign reason"
+source: "Common Kubernetes failure mode: configMapKeyRef to a key removed by a later edit"
