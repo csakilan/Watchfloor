@@ -1,0 +1,19 @@
+ROOT_CAUSE_CATEGORIES: frozenset[str] = frozenset(
+    {
+        "bad_image_tag",
+        "image_pull_secret_missing",
+        "oom_killed",
+        "missing_configmap_key",
+        "missing_secret",
+        "wrong_service_selector",
+        "readiness_probe_wrong_port",
+        "liveness_probe_too_aggressive",
+        "networkpolicy_blocking_traffic",
+        "pvc_pending_no_storageclass",
+        "resource_quota_exceeded",
+        "node_selector_unschedulable",
+        "crashloop_bad_env_var",
+        "init_container_failing",
+        "service_port_mismatch",
+    }
+)
