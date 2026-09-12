@@ -1,4 +1,3 @@
-
 import pytest
 
 from config.settings import REPO_ROOT
@@ -12,12 +11,12 @@ def test_load_routing_parses_all_four_roles():
 
 
 def test_spec_for_returns_the_spec():
-    routing = {"supervisor": ModelSpec(provider="google", model="gemini-2.5-flash")}
-    assert spec_for("supervisor", routing).model == "gemini-2.5-flash"
+    routing = {"supervisor": ModelSpec(provider="google", model="test-model-a")}
+    assert spec_for("supervisor", routing).model == "test-model-a"
 
 
 def test_spec_for_unknown_role_lists_the_known_roles():
-    routing = {"supervisor": ModelSpec(provider="google", model="gemini-2.5-flash")}
+    routing = {"supervisor": ModelSpec(provider="google", model="test-model-a")}
     with pytest.raises(KeyError) as exc:
         spec_for("librarian", routing)
     assert "librarian" in str(exc.value)
